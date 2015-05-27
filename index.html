@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
 	<title>H5效果</title>
+	<title>index</title>
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/swiper.min.css">
 	<link rel="stylesheet" href="css/animate.min.css">
@@ -18,6 +19,7 @@
 		<div class="swiper-wrapper">
 			<section class="swiper-slide swiper-slide1">
 				<img class="car" src="images/p_img_one.png" alt="">
+				<img class="car out" src="images/p_img_one.png" alt="">
 				<img class="text" src="images/p_img_two.png" alt="">
 				<img class="arrow" src="images/tips.png" alt="">
 				<p class="bottom_txt">向上滑动页面</p>
@@ -59,12 +61,16 @@
 	});
 	$(document).ready(function(){
 		$(".car").addClass("car_come");
+		// $(".car").addClass("car_come");
+		$(".car").removeClass("out");
 	})
 
 	function animateChange(index){
 		switch (index) {
 			case 0:
 				$(".car").addClass("car_come");
+				// $(".car").addClass("car_come").removeClass("out");
+				$(".car").removeClass("out");
 				break;
 			case 1:
 					// page2效果
@@ -78,6 +84,8 @@
 	}
 	function animateInit(){
 		$(".car").removeClass("car_come");
+		// $(".car").removeClass("car_come").addClass("out");
+		$(".car").addClass("out");
 		$(".text2").css({
 			"transition" : "all 0",
 			"transform" : "translateX(-100%)"

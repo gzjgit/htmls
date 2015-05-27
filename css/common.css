@@ -1,0 +1,93 @@
+@charset "utf-8";
+html,body{
+	height:100%;
+}
+body{
+	font-family:"microsoft yahei";
+}
+.swiper-container {
+  /*  width: 320px;
+    height: 480px;*/
+	width: 100%;
+    height: 100%;
+	/*background:#000;*/
+}  
+
+.swiper-slide{
+	width:100%;
+	height:100%;
+}
+.swiper-slide1 {
+	background: url("../images/p_img_three.jpg") center no-repeat;
+	background-size: cover;
+}
+.swiper-slide2 {
+	background: url("../images/p2_three.jpg") center no-repeat;
+	background-size: cover;
+}
+.car {
+	position: absolute;
+	top: 28%;
+	left: 37%;
+	z-index: 9;
+	width: 26%;
+}
+.swiper-slide1 .car_come {
+	left: 12%;
+	width: 76%;
+	transition: all 1s linear;
+}
+.text {
+	position: absolute;
+	top: 58%;
+	width: 100%;
+}
+.arrow {
+	position: absolute;
+	bottom: 6%;
+	left: 45%;
+	z-index: 10;
+	width: 10%;
+	-webkit-animation: arrow 900ms linear infinite;
+}
+@-webkit-keyframes arrow {
+	0% {bottom: 6%; opacity: 1;}
+	100% {bottom: 8%; opacity: 0;}
+}
+.bottom_txt {
+	position: absolute;
+	bottom: 2%;
+	width: 100%;
+	font-size: 12px;
+	color: #ababab;
+	text-align: center;
+}
+.swiper-slide2 .text {
+	top: 60%;
+	transform: translateX(-300%);
+	-webkit-transform: translateX(-300%);
+}
+.car_two {
+	position: absolute;
+	top: 38%;
+	right: -300%;
+	width: 74%;
+}
+.swiper-slide2 .car_in {
+	right: 7%;
+	transition: all 500ms linear;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

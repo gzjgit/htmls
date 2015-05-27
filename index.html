@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+	<title>H5</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" href="css/common.css">
+	<script src="js/jQuery.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<script src="js/swiper.animate.min.js"></script>
+
+</head>
+<body>
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<section class="swiper-slide swiper-slide1">
+				<img class="car" src="images/p_img_one.png" alt="">
+				<img class="text" src="images/p_img_two.png" alt="">
+				<img class="arrow" src="images/tips.png" alt="">
+				<p class="bottom_txt">向上滑动页面</p>
+			</section>
+			<section class="swiper-slide swiper-slide2">
+				<img class="car_two" src="images/p2_one.png" alt="">
+				<img class="text text2" src="images/p2_two.png" alt="">
+				<img class="arrow" src="images/tips.png" alt="">
+				<p class="bottom_txt">向上滑动页面</p>
+			</section>
+			<section class="swiper-slide swiper-slide3">3</section>
+			<section class="swiper-slide swiper-slide4">4</section>
+		</div>
+	</div>
+</body>
+<script>
+	var num = 0;
+	var index = 0;
+	var mySwiper = new Swiper ('.swiper-container', {
+		direction : 'vertical',
+		pagination: '.swiper-pagination',
+		mousewheelControl : false,
+		onInit: function(swiper){
+			swiperAnimateCache(swiper);
+			swiperAnimate(swiper);
+		},
+		onSlideChangeStart: function(swiper){
+			// animateInit();
+		},
+		onSlideChangeEnd: function(swiper){
+			swiperAnimate(swiper);
+			index = mySwiper.activeIndex;
+			animateChange(index);
+		},
+		onTransitionEnd: function(swiper){
+			swiperAnimate(swiper);
+			animateInit();
+		},
+	});
+	$(document).ready(function(){
+		$(".car").addClass("car_come");
+	})
+
+	function animateChange(index){
+		switch (index) {
+			case 0:
+				$(".car").addClass("car_come");
+				break;
+			case 1:
+					// page2效果
+				$(".text2").css({
+					"transform" : "translateX(0)",
+					"transition" : "all 500ms ease-in"
+				})
+				$(".car_two").addClass("car_in");
+				break;
+		}
+	}
+	function animateInit(){
+		$(".car").removeClass("car_come");
+		$(".text2").css({
+			"transition" : "all 0",
+			"transform" : "translateX(-100%)"
+		})
+		$(".car_two").removeClass("car_in");
+	}
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
